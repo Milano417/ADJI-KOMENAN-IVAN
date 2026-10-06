@@ -8,7 +8,7 @@ export default function Preloader({ onFinish }: { onFinish: () => void }) {
     const timer = setTimeout(() => {
       setFading(true);
       setTimeout(onFinish, 300);
-    }, 600);
+    },600);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
@@ -22,7 +22,7 @@ export default function Preloader({ onFinish }: { onFinish: () => void }) {
     >
       <div className="flex flex-col items-center gap-3">
         <div className="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#FF5500] text-white shadow-lg shadow-orange-500/25">
-          <span className="font-display text-2xl font-bold tracking-tighter">M</span>
+          <span className="font-display text-2xl font-bold tracking-tighter">AI</span>
           <span className="absolute -top-1 -right-1 flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFE7D6] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>

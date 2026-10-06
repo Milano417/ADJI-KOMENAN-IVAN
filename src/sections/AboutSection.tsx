@@ -65,7 +65,7 @@ export default function AboutSection({ onOpenCV }: AboutSectionProps) {
             02 · Storytelling & Vision
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Derrière MILANO
+            Derrière ADJI IVAN
           </h2>
           <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
             Comprendre le problème avant d'écrire une seule ligne de code : telle est ma définition de l'ingénierie numérique.
