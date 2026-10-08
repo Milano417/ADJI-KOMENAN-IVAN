@@ -118,7 +118,7 @@ export default function HeroSection({ onOpenCV }: HeroSectionProps) {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-white/20 dark:border-slate-800/80 shadow-lg space-y-1">
                   <div className="flex items-center justify-between">
                     <span className="font-display font-bold text-sm text-slate-900 dark:text-white">
-                      MILANO
+                      ADJI IVAN
                     </span>
                     <span className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-600 dark:text-emerald-400">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
