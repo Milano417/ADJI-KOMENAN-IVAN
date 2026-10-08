@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Compass, Moon, Sun, Menu, X, ArrowUpRight } from 'lucide-react';
-
+import { Analytics } from "@vercel/analytics/next"
 interface NavbarProps {
   darkMode: boolean;
   onToggleDarkMode: () => void;
