@@ -11,7 +11,7 @@
 Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × Digital Creative × Professional**. Conçu avec une palette lumineuse et énergique dominée par le **Solar Orange (`#FF5500`)** et le **Warm Peach / Amber Light (`#FFF3EB`)**, ce produit démontre la capacité d'Ivan Milano à concevoir, modéliser, développer et déployer des applications logicielles réelles, centrées sur le résultat et l'ergonomie.
 
 ### Piliers de l'architecture :
-- **Ingénierie Web & Mobile** : React 19, TypeScript strict, architecture par composants.
+- **Ingénierie Web** : HTML5 sémantique, CSS3 moderne et JavaScript natif, sans framework ni étape de build.
 - **Rigueur Backend & Données** : Modélisation Merise / SQL, PHP, transactions MySQL.
 - **Direction Artistique & UI/UX** : Système typographique soigné (`Outfit` + `Plus Jakarta Sans`), respect de la règle zéro-pill, contrastes WCAG AA.
 - **Visite Guidée Interactive** : Parcours d'onboarding en 7 étapes avec mémorisation locale (`localStorage`).
@@ -22,11 +22,11 @@ Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × D
 
 ## 2. Technologies
 
-- **Frontend Core** : React 19, TypeScript, Vite 8
-- **Styling** : Tailwind CSS v4, CSS Variables, Typography & Subtle Grids
-- **Motion & Interactions** : Micro-interactions réactives, curseur personnalisé desktop, modales accessibles
-- **Iconographie** : Lucide React
-- **Dev & Build** : Bun / Vite / PostCSS / TypeScript
+- **Structure** : HTML5 sémantique
+- **Styles** : CSS3 (variables CSS, grid, flexbox, mode clair / sombre)
+- **Interactions** : JavaScript natif (ES6+), aucune dépendance
+- **Iconographie** : tracés Lucide intégrés en SVG
+- **Polices** : Outfit, Plus Jakarta Sans, JetBrains Mono (Google Fonts)
 
 ---
 
@@ -34,95 +34,48 @@ Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × D
 
 ```text
 /
-├── public/
-│   ├── robots.txt
-│   └── sitemap.xml
-├── src/
-│   ├── assets/
-│   │   └── images/                # Visuels éditoriaux et mockups de projets haute résolution
-│   ├── components/
-│   │   ├── Navbar.tsx             # Barre de navigation sticky 3 zones + dark mode + tour
-│   │   ├── CustomCursor.tsx       # Curseur interactif desktop (désactivé sur tactile)
-│   │   ├── GuidedTourModal.tsx    # Visite guidée en 7 étapes avec défilement fluide
-│   │   ├── ProjectCaseStudyModal.tsx # Modale d'étude de cas structurée
-│   │   ├── CVModal.tsx            # Visualiseur et impression de CV haute lisibilité
-│   │   ├── EasterEggBanner.tsx    # Milano Mode ⚡ déclenché sur 5 clics
-│   │   ├── Preloader.tsx          # Préchargement instantané (<600ms)
-│   │   ├── NotFoundPage.tsx       # Page 404 épurée
-│   │   └── Footer.tsx             # Pied de page avec liens et relecture de la visite
-│   ├── data/
-│   │   ├── profile.ts             # Informations d'identité, bio, réseaux, coordonnées
-│   │   ├── projects.ts            # Données des 10 projets réels & études de cas
-│   │   ├── skills.ts              # Compétences par domaine (sans faux pourcentages)
-│   │   ├── services.ts            # 7 services d'ingénierie et design
-│   │   ├── experience.ts          # Parcours professionnel (CIMIF, SONAPIE) et BTS IDA
-│   │   ├── process.ts             # Workflow en 7 étapes « Comment je travaille »
-│   │   └── tour.ts                # Configuration des étapes de visite
-│   ├── sections/
-│   │   ├── HeroSection.tsx        # Accroche, portrait studio, statut et CTA
-│   │   ├── AboutSection.tsx       # Storytelling « Derrière MILANO » et timeline
-│   │   ├── SkillsSection.tsx      # Matrice de compétences, mur tech et encart MILANO + IA
-│   │   ├── ServicesSection.tsx    # Cartes de solutions avec redirection formulaire
-│   │   ├── ProjectsSection.tsx    # Grille filtrable et accès aux études de cas
-│   │   ├── WorkflowSection.tsx    # Déroulé méthodologique pas à pas
-│   │   ├── ExperienceSection.tsx  # Chronologie des missions et diplôme BTS
-│   │   └── ContactSection.tsx     # Formulaire validé avec protection anti-spam
-│   ├── App.tsx                    # Orchestrateur applicatif
-│   ├── index.css                  # Import Tailwind CSS et règles typographiques
-│   └── main.tsx                   # Point d'entrée React
-├── index.html                     # Balises SEO complètes, OpenGraph, JSON-LD Schema
-├── metadata.json                  # Métadonnées de l'application
-└── package.json
+├── index.html        # Page unique : sections, modales, SEO, OpenGraph, JSON-LD
+├── css/
+│   └── style.css     # Design system complet (couleurs, typographie, mode sombre, responsive)
+├── js/
+│   ├── data.js       # Contenu du site : profil, projets, services, compétences, parcours, visite
+│   └── main.js       # Comportements : thème, navigation, filtres, modales, visite guidée, formulaire
+├── assets/
+│   └── images/       # Portraits et visuels des projets
+├── robots.txt
+└── sitemap.xml
 ```
 
 ---
 
-## 4. Installation & Démarrage Local
+## 4. Lancer le site en local
 
-### Prérequis
-- Node.js (v18+ ou v20+) ou Bun
+Aucune installation n'est nécessaire : ouvrir `index.html` dans un navigateur.
 
-### Commandes
-```bash
-# Installation des dépendances
-npm install
-
-# Démarrage du serveur de développement (port 3000)
-npm run dev
-
-# Vérification du build de production
-npm run build
-
-# Prévisualisation du bundle produit
-npm run preview
-```
+Pour un rendu identique à la production, on peut aussi utiliser un petit serveur local, par exemple l'extension **Live Server** de VS Code.
 
 ---
 
 ## 5. Déploiement sur Vercel
 
-1. Créer un nouveau dépôt sur GitHub et pousser le code :
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: portfolio professionnel haut de gamme - Milano"
-   git branch -M main
-   git remote add origin <URL_DE_VOTRE_REPO>
-   git push -u origin main
-   ```
-2. Connecter le projet sur [Vercel](https://vercel.com) :
-   - **Framework Preset** : Vite
-   - **Build Command** : `npm run build`
-   - **Output Directory** : `dist`
-3. Domaine personnalisé : ajouter votre domaine (ex. `milano.dev` ou `adjikomenan.com`) dans les réglages DNS de Vercel.
+1. Pousser le code sur GitHub (`git push`).
+2. Dans les réglages du projet sur [Vercel](https://vercel.com) :
+   - **Framework Preset** : Other
+   - **Build Command** : (vide)
+   - **Output Directory** : (vide, la racine du dépôt)
+3. Domaine personnalisé : ajouter votre domaine dans les réglages DNS de Vercel.
 
 ---
 
-## 6. Checklist de Maintenance & Ajout de Contenu
+## 6. Ajouter ou modifier du contenu
 
-- **Ajouter un nouveau projet** : Ajouter simplement une entrée dans `src/data/projects.ts` en renseignant le résumé, la catégorie et les 7 points de l'étude de cas. L'interface se met à jour automatiquement.
-- **Ajouter une nouvelle expérience ou certification** : Compléter `EXPERIENCES_DATA` ou `EDUCATION_DATA` dans `src/data/experience.ts`.
-- **Modifier les coordonnées** : Modifier `src/data/profile.ts`.
+Tout le contenu se trouve dans `js/data.js` :
+
+- **Ajouter un projet** : ajouter une entrée dans `PROJECTS_DATA` (résumé, catégorie, image dans `assets/images/` et les 7 points de l'étude de cas).
+- **Ajouter une expérience ou une formation** : compléter `EXPERIENCES_DATA` ou `EDUCATION_DATA`.
+- **Modifier les coordonnées** : modifier `PROFILE_DATA`.
+
+L'interface se met à jour automatiquement.
 
 ---
 

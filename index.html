@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
       property="og:description"
       content="Développeur Web & Mobile, Créateur Digital et Designer Graphique. Je conçois et développe des solutions numériques modernes, utiles et performantes."
     />
-    <meta property="og:image" content="/src/assets/images/ivane.png />
+    <meta property="og:image" content="assets/images/ivane.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -29,15 +29,27 @@
       name="twitter:description"
       content="Développeur Web & Mobile, Créateur Digital et Designer Graphique. Solutions numériques haut de gamme de la conception au déploiement."
     />
-    <meta name="twitter:image" content="/src/assets/images/ivane1.png" />
+    <meta name="twitter:image" content="assets/images/ivane1.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF5500'/%3E%3Cpath d='M30 70V30L50 52L70 30V70' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
+    <!-- Thème appliqué avant l'affichage (évite le flash clair/sombre) -->
+    <script>
+      try {
+        var t = localStorage.getItem('milano_theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -85,9 +97,579 @@
     }
     </script>
   </head>
-  <body class="bg-[#F8FAFC] text-slate-900 antialiased selection:bg-[#FF5500] selection:text-white transition-colors duration-300">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+      <div class="preloader-inner">
+        <div class="preloader-logo">
+          AI
+          <span class="ping-dot"></span>
+        </div>
+        <div class="preloader-name">
+          <strong>ADJI IVAN-CODEV</strong>
+          <span>· digital-dev studio</span>
+        </div>
+        <div class="preloader-bar"><div></div></div>
+      </div>
+    </div>
+
+    <!-- Curseur personnalisé (desktop) -->
+    <div id="cursor" aria-hidden="true">
+      <div class="cursor-ring"></div>
+      <div class="cursor-dot"></div>
+    </div>
+
+    <!-- Easter egg (5 clics sur le logo) -->
+    <div id="easter-egg" class="hidden" role="status">
+      <div class="easter-inner">
+        <div class="easter-icon"><i data-icon="zap" data-size="sm"></i></div>
+        <div>
+          <p class="easter-title">ADJI IVAN MODE ⚡ ACTIVÉ</p>
+          <p class="easter-text">Vélocité maximale, code affûté et précision créative !</p>
+        </div>
+        <button id="easter-close" aria-label="Fermer la notification"><i data-icon="x" data-size="sm"></i></button>
+      </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-row">
+          <button id="logo" class="logo" title="MILANO · Développeur Web & Mobile" aria-label="MILANO Accueil">ADJI KOMENAN IVAN</button>
+
+          <nav class="nav-links" aria-label="Navigation principale">
+            <a href="#hero" data-section="hero">Accueil</a>
+            <a href="#about" data-section="about">À propos</a>
+            <a href="#skills" data-section="skills">Compétences</a>
+            <a href="#services" data-section="services">Services</a>
+            <a href="#projects" data-section="projects">Projets</a>
+            <a href="#experience" data-section="experience">Parcours</a>
+            <a href="#contact" data-section="contact">Contact</a>
+          </nav>
+
+          <div class="nav-actions">
+            <button class="tour-btn js-start-tour" title="Lancer la visite guidée" aria-label="Visite guidée interactive">
+              <i data-icon="compass" data-size="sm"></i>
+              <span>Visite guidée</span>
+            </button>
+            <button id="theme-toggle" class="icon-btn" aria-label="Basculer le thème"></button>
+            <a href="#contact" class="btn btn-primary btn-lift nav-cta">
+              <span>Parlons de votre projet</span>
+              <i data-icon="arrow-up-right" data-size="sm"></i>
+            </a>
+            <button id="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"></button>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden">
+          <a href="#hero" class="m-link" data-section="hero">Accueil</a>
+          <a href="#about" class="m-link" data-section="about">À propos</a>
+          <a href="#skills" class="m-link" data-section="skills">Compétences</a>
+          <a href="#services" class="m-link" data-section="services">Services</a>
+          <a href="#projects" class="m-link" data-section="projects">Projets</a>
+          <a href="#experience" class="m-link" data-section="experience">Parcours</a>
+          <a href="#contact" class="m-link" data-section="contact">Contact</a>
+          <div class="m-cta-wrap">
+            <a href="#contact" class="btn btn-primary m-link-cta">
+              <span>Parlons de votre projet</span>
+              <i data-icon="arrow-up-right" data-size="sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ===================== HERO ===================== -->
+      <section id="hero" class="bg-grid-subtle">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div class="hero-kicker">
+                <span class="pulse-dot animate-pulse"></span>
+                <span>WEB &amp; MOBILE DEVELOPER · DIGITAL CREATOR · GRAPHIC DESIGNER</span>
+              </div>
+
+              <div>
+                <h1 class="hero-title">Je transforme des idées en <span>expériences digitales.</span></h1>
+                <div class="hero-name">
+                  <span class="full" data-bind="fullName"></span>
+                  <span class="slash">/</span>
+                  <span class="alias">« <span data-bind="professionalName"></span> »</span>
+                </div>
+              </div>
+
+              <p class="hero-text" id="hero-text"></p>
+
+              <div class="hero-proofs">
+                <div><i data-icon="map-pin"></i><span>Abidjan, Côte d'Ivoire</span></div>
+                <span class="sep" aria-hidden="true">·</span>
+                <div><i data-icon="sparkles"></i><span>Full-Stack &amp; UI/UX</span></div>
+                <span class="sep" aria-hidden="true">·</span>
+                <div><span class="green-dot"></span><span class="avail">Disponible pour projets</span></div>
+              </div>
+
+              <div class="hero-ctas">
+                <a href="#projects" class="btn btn-primary btn-lift-2">
+                  <span>Découvrir mon travail</span>
+                  <i data-icon="arrow-up-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline btn-lift-2"><span>Me contacter</span></a>
+                <button class="btn btn-link js-open-cv" title="Consulter et télécharger le CV">
+                  <i data-icon="file-text"></i>
+                  <span>Voir mon CV</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="portrait-wrap">
+                <div class="portrait">
+                  <img src="assets/images/ivane.png" alt="Portrait officiel de Adji Komenan Ivan « Milano »" />
+                  <div class="portrait-scrim"></div>
+                  <div class="portrait-card">
+                    <div class="row">
+                      <strong>ADJI IVAN</strong>
+                      <span class="online"><span class="green-dot animate-pulse"></span>En ligne</span>
+                    </div>
+                    <p>Développeur Web &amp; Mobile · Créateur Digital</p>
+                  </div>
+                </div>
+                <div class="portrait-accent" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-indicator">
+            <a href="#about" aria-label="Faire défiler vers la section À propos">
+              <span>Explorer mon univers</span>
+              <div class="scroll-circle"><i data-icon="arrow-down"></i></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section section-white">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">02 · Storytelling &amp; Vision</span>
+            <h2 class="section-title">Derrière ADJI IVAN</h2>
+            <p class="section-lead">Comprendre le problème avant d'écrire une seule ligne de code : telle est ma définition de l'ingénierie numérique.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-story">
+              <div class="story">
+                <p>Je m'appelle <strong>ADJI KOMENAN IVAN FLORIAN EKRA</strong>, plus connu sous le nom de <strong class="accent">MILANO</strong>. Je suis un jeune développeur et créateur digital ivoirien basé à Abidjan.</p>
+                <p>Mon approche se distingue par une double compétence rare : la rigueur de l'architecture logicielle full-stack alliée à la sensibilité du design graphique. Ayant exercé en environnement d'imprimerie (CIMIF) et dans le conseil opérationnel de systèmes d'information (Hôtel de la Paix / SONAPIE), je sais que le succès d'un outil digital ne se mesure pas au nombre de lignes de code, mais à son adoption par les utilisateurs finaux.</p>
+                <p>Qu'il s'agisse de concevoir un système de caisse pour un commerce local, une plateforme de gestion hôtelière ou une présence en ligne institutionnelle, je m'assure que chaque interaction soit limpide, performante et directement rentable pour l'organisation.</p>
+              </div>
+
+              <div class="pillars">
+                <div class="pillar">
+                  <div class="icon-box"><i data-icon="code"></i></div>
+                  <h3>Code Propre &amp; Robuste</h3>
+                  <p>Développement full-stack (React, TypeScript, PHP, MySQL) structuré selon les standards modernes, garantissant évolutivité et maintenabilité.</p>
+                </div>
+                <div class="pillar">
+                  <div class="icon-box"><i data-icon="palette"></i></div>
+                  <h3>Sensibilité Design &amp; UI/UX</h3>
+                  <p>Une culture visuelle aiguisée par l'imprimerie et le graphisme : chaque interface est épurée, ergonomique et centrée utilisateur.</p>
+                </div>
+                <div class="pillar">
+                  <div class="icon-box"><i data-icon="smartphone"></i></div>
+                  <h3>Mobile &amp; Multi-Plateforme</h3>
+                  <p>Création d'expériences optimisées pour les usages réels en Afrique de l'Ouest : rapidité, zones tactiles intuitives et résilience réseau.</p>
+                </div>
+                <div class="pillar">
+                  <div class="icon-box"><i data-icon="brain"></i></div>
+                  <h3>Ingénierie Assistée par IA</h3>
+                  <p>Utilisation des outils d'intelligence artificielle pour accélérer le prototypage, sécuriser les flux et concevoir des solutions innovantes.</p>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button class="btn btn-primary btn-lg js-open-cv">
+                  <span>Consulter le CV complet</span>
+                  <i data-icon="arrow-up-right" data-size="sm"></i>
+                </button>
+                <a href="#workflow" class="link-arrow"><span>Découvrir ma méthode de travail</span><b>→</b></a>
+              </div>
+            </div>
+
+            <div class="about-side">
+              <div class="studio-photo">
+                <img src="assets/images/ivane1.png" alt="Adji Komenan Ivan Milano en atelier créatif" loading="lazy" />
+                <div class="scrim"></div>
+                <div class="caption">ADJI IVAN · En studio créatif &amp; technique</div>
+              </div>
+
+              <div class="timeline-card">
+                <h3><i data-icon="layers"></i><span>Parcours d'évolution</span></h3>
+                <div class="timeline">
+                  <div class="milestone">
+                    <div class="row"><span class="year">2023 – 2025</span><span class="place">ISATECH · Abidjan</span></div>
+                    <h4>Formation BTS Informatique Développeur d'Applications</h4>
+                    <p>Acquisition des fondements de l'algorithmique, de la modélisation Merise/SQL, de la programmation web et de la conception logicielle.</p>
+                  </div>
+                  <div class="milestone">
+                    <div class="row"><span class="year">Fin 2025</span><span class="place">Hôtel de la Paix / SONAPIE</span></div>
+                    <h4>Conseil &amp; Digitalisation en Système d'Information</h4>
+                    <p>Immersion opérationnelle, analyse des flux de réception, facturation et modélisation du prototype HotelFlow.</p>
+                  </div>
+                  <div class="milestone">
+                    <div class="row"><span class="year">2025 – 2026</span><span class="place">CIMIF Imprimerie</span></div>
+                    <h4>PAO &amp; Communication Visuelle</h4>
+                    <p>Rigueur technique du print, conception de chartes graphiques professionnelles et gestion des spécifications d'impression.</p>
+                  </div>
+                  <div class="milestone">
+                    <div class="row"><span class="year">2026</span><span class="place">Écosystème Digital Indépendant</span></div>
+                    <h4>Lancement de MILAWEB &amp; Projets Métiers</h4>
+                    <p>Développement de solutions complètes (MILAWEB, CaisPro, AlertCI, Milyshop) du cahier des charges jusqu'au produit final.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section id="skills" class="section section-alt">
+        <div class="container stack-16">
+          <div class="section-head">
+            <span class="eyebrow">03 · Compétences &amp; Technologies</span>
+            <h2 class="section-title">Savoir-faire technique par la preuve</h2>
+            <p class="section-lead">Pas de faux pourcentages ni de jauges arbitraires : un socle de compétences concrètes, éprouvées sur des projets déployés et des systèmes opérationnels.</p>
+          </div>
+
+          <div class="tabs" id="skill-tabs" role="tablist"></div>
+
+          <div class="skill-panel">
+            <div class="skill-panel-head">
+              <h3 id="skill-title"></h3>
+              <p id="skill-desc"></p>
+            </div>
+            <div class="grid md-2 lg-3 skill-grid" id="skill-items"></div>
+          </div>
+
+          <div>
+            <span class="tech-wall-label">Technologies &amp; Écosystème Quotidien</span>
+            <div class="tech-wall" id="tech-wall"></div>
+          </div>
+
+          <div class="ai-banner">
+            <div class="ai-inner">
+              <div class="ai-kicker"><i data-icon="sparkles"></i><span>APPROCHE HYBRIDE · MILANO + IA</span></div>
+              <h3>« Je combine développement logiciel, design et outils d'intelligence artificielle pour accélérer la conception et améliorer la qualité des produits numériques. »</h3>
+              <p>Pour moi, l'intelligence artificielle n'est pas un substitut au développeur, mais un puissant amplificateur de productivité. Elle permet d'explorer plus rapidement les hypothèses architecturales, d'automatiser les tests de non-régression et d'affiner l'expérience utilisateur, tandis que mon esprit critique d'ingénieur garantit la sécurité, la structure des bases de données et la pertinence métier.</p>
+              <div class="ai-stats">
+                <div><i data-icon="zap"></i><span>Vélocité de prototypage ×3</span></div>
+                <div><i data-icon="shield-check"></i><span>Rigueur de typage &amp; sécurité</span></div>
+                <div><i data-icon="cpu"></i><span>Architecture 100% maîtrisée</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES ===================== -->
+      <section id="services" class="section section-white">
+        <div class="container stack-16">
+          <div class="section-head">
+            <span class="eyebrow">04 · Services &amp; Solutions</span>
+            <h2 class="section-title">Des réponses précises à chaque enjeu numérique</h2>
+            <p class="section-lead">De la vitrine institutionnelle jusqu'au système d'information complet, j'accompagne entreprises, créateurs et organisations avec une exigence de résultats concrets.</p>
+          </div>
+          <div class="grid md-2 lg-3" id="services-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="section section-alt">
+        <div class="container stack-16">
+          <div class="projects-head">
+            <div class="section-head">
+              <span class="eyebrow">05 · Réalisations &amp; Études de Cas</span>
+              <h2 class="section-title">Projets réels, architecture &amp; conception</h2>
+              <p class="section-lead">Chaque projet ci-dessous représente une problématique concrète analysée et résolue. Cliquez sur un projet pour consulter son étude de cas détaillée.</p>
+            </div>
+            <div class="tabs tabs-sm" id="project-filters">
+              <button class="tab active" data-filter="all">Tous les projets</button>
+              <button class="tab" data-filter="system">Systèmes de Gestion</button>
+              <button class="tab" data-filter="web">Applications Web</button>
+              <button class="tab" data-filter="ecommerce">E-Commerce</button>
+              <button class="tab" data-filter="brand">Branding &amp; Print</button>
+            </div>
+          </div>
+          <div class="grid md-2 lg-3 projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== WORKFLOW ===================== -->
+      <section id="workflow" class="section section-white">
+        <div class="container stack-16">
+          <div class="section-head">
+            <span class="eyebrow">06 · Méthodologie &amp; Rigueur</span>
+            <h2 class="section-title">Comment je travaille</h2>
+            <p class="section-lead">Un processus structuré en 7 étapes séquentielles, garantissant clarté, anticipation des risques et livraison dans les délais.</p>
+          </div>
+          <div class="grid md-2 lg-3" id="workflow-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section id="experience" class="section section-alt">
+        <div class="container stack-16">
+          <div class="section-head">
+            <span class="eyebrow">07 · Expériences &amp; Formation</span>
+            <h2 class="section-title">Parcours professionnel &amp; académique</h2>
+            <p class="section-lead">Une trajectoire bâtie sur le terrain : formation d'ingénierie applicative, missions en imprimerie de production et audit des processus d'accueil hôtelier.</p>
+          </div>
+
+          <div class="exp-grid">
+            <div>
+              <div class="col-head"><i data-icon="briefcase"></i><h3>Expériences Professionnelles</h3></div>
+              <div class="stack-6" id="exp-list"></div>
+            </div>
+            <div>
+              <div class="col-head"><i data-icon="graduation-cap" data-class="green"></i><h3>Diplômes &amp; Formation</h3></div>
+              <div class="stack-6">
+                <div id="edu-list" class="stack-6"></div>
+                <div class="placeholder-note">Section extensible pour formations continues et certifications spécialisées futures.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section section-white">
+        <div class="container stack-16">
+          <div class="section-head">
+            <span class="eyebrow">08 · Contact Direct &amp; Collaboration</span>
+            <h2 class="section-title">Parlons de votre projet.</h2>
+            <p class="section-lead">Vous avez une idée, un projet ou un besoin numérique ? Échangeons sur la meilleure manière de le transformer en solution.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div>
+                <h3>Coordonnées directes</h3>
+                <p class="small">Réponse garantie sous 24h ouvrées.</p>
+              </div>
+
+              <div class="contact-lines">
+                <a class="contact-line js-mailto">
+                  <div class="box"><i data-icon="mail"></i></div>
+                  <div>
+                    <span class="lbl">Email professionnel</span>
+                    <span class="val" data-bind="email"></span>
+                  </div>
+                </a>
+                <div class="contact-line">
+                  <div class="box neutral"><i data-icon="map-pin"></i></div>
+                  <div>
+                    <span class="lbl">Localisation</span>
+                    <span class="val" data-bind="location"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="socials-block">
+                <span class="lbl">Réseaux Professionnels</span>
+                <div class="social-chips">
+                  <a class="social-chip js-linkedin" target="_blank" rel="noreferrer">
+                    <i data-icon="linkedin" data-size="sm"></i><span>LinkedIn</span><i data-icon="arrow-up-right" data-size="xs"></i>
+                  </a>
+                  <a class="social-chip js-github" target="_blank" rel="noreferrer">
+                    <i data-icon="github" data-size="sm"></i><span>GitHub</span><i data-icon="arrow-up-right" data-size="xs"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <form id="contact-form" novalidate>
+              <!-- Champ anti-spam (honeypot) -->
+              <input type="text" name="user_nickname" id="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
+
+              <div id="form-success" class="alert alert-success hidden">
+                <i data-icon="check-circle"></i>
+                <div>
+                  <h4>Message envoyé avec succès.</h4>
+                  <p>Merci pour votre sollicitation. Je reviendrai vers vous très rapidement par email.</p>
+                </div>
+              </div>
+
+              <div id="form-error" class="alert alert-error hidden">
+                <i data-icon="alert-circle"></i>
+                <p id="form-error-text"></p>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="contact-name">Nom complet <span>*</span></label>
+                  <input id="contact-name" name="name" type="text" required placeholder="ex. Jean Marc Koffi" />
+                </div>
+                <div class="field">
+                  <label for="contact-email">Email professionnel <span>*</span></label>
+                  <input id="contact-email" name="email" type="email" required placeholder="ex. contact@entreprise.ci" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="contact-subject">Sujet de l'échange</label>
+                  <input id="contact-subject" name="subject" type="text" placeholder="ex. Refonte de plateforme web" />
+                </div>
+                <div class="field">
+                  <label for="contact-project-type">Type de projet</label>
+                  <select id="contact-project-type" name="projectType">
+                    <option>Site web</option>
+                    <option>Application web</option>
+                    <option>Application mobile</option>
+                    <option>Design</option>
+                    <option>Solution digitale</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="contact-message">Votre message ou description du besoin <span>*</span></label>
+                <textarea id="contact-message" name="message" required rows="4" placeholder="Décrivez brièvement les objectifs de votre projet, les fonctionnalités souhaitées ou votre calendrier..."></textarea>
+              </div>
+
+              <div class="form-foot">
+                <span class="req">* Champs obligatoires</span>
+                <button type="submit" id="form-submit" class="btn btn-primary btn-lift">
+                  <i data-icon="send" data-size="sm"></i>
+                  <span>Envoyer ma demande</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div>
+              <span class="name" data-bind="fullName"></span>
+              <span class="role">« <span data-bind="professionalName"></span> » · <span data-bind="role"></span></span>
+            </div>
+            <p>Conception et développement de solutions logicielles complètes, d'applications mobiles réactives et d'identités visuelles à fort impact.</p>
+            <div class="footer-socials">
+              <a class="js-linkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn de Milano"><i data-icon="linkedin"></i></a>
+              <a class="js-github" target="_blank" rel="noreferrer" aria-label="GitHub de Milano"><i data-icon="github"></i></a>
+              <a class="js-mailto" aria-label="Envoyer un email à Milano"><i data-icon="mail"></i></a>
+            </div>
+          </div>
+
+          <div>
+            <span class="footer-label">Navigation</span>
+            <div class="footer-nav">
+              <a href="#hero">Accueil</a>
+              <a href="#about">À propos</a>
+              <a href="#skills">Compétences</a>
+              <a href="#services">Services</a>
+              <a href="#projects">Projets</a>
+              <a href="#workflow">Méthodologie</a>
+              <a href="#experience">Expériences</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <span class="footer-label">Interactivité</span>
+            <div class="footer-actions">
+              <button class="btn-replay js-start-tour"><i data-icon="compass" data-size="sm"></i><span>Rejouer la visite</span></button>
+              <button class="btn-top" id="to-top"><i data-icon="arrow-up" data-size="sm"></i><span>Haut de page</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 MILANO. Tous droits réservés.</p>
+          <p>Conçu &amp; développé avec rigueur et passion à Abidjan</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== VISITE GUIDÉE ===================== -->
+    <div id="tour" class="hidden" role="dialog" aria-modal="true" aria-labelledby="tour-heading">
+      <div class="tour-card">
+        <div id="tour-welcome" class="tour-welcome">
+          <div class="top">
+            <div class="who">
+              <div class="box"><i data-icon="sparkles" data-size="lg"></i></div>
+              <div>
+                <h3 id="tour-heading">Bienvenue dans mon portfolio 👋</h3>
+                <p>ADJI KOMENAN IVAN · MILANO</p>
+              </div>
+            </div>
+            <button class="close-btn js-tour-dismiss" aria-label="Fermer la bienvenue"><i data-icon="x"></i></button>
+          </div>
+          <p>Je peux vous faire découvrir rapidement mon parcours, mes compétences et mes projets à travers une visite guidée interactive en 7 étapes.</p>
+          <div class="btns">
+            <button class="btn btn-ghost btn-md js-tour-dismiss" style="font-weight:600">Explorer seul</button>
+            <button class="btn btn-primary btn-md" id="tour-begin"><i data-icon="compass" data-size="sm"></i><span>Commencer la visite</span></button>
+          </div>
+        </div>
+
+        <div id="tour-step" class="tour-step hidden">
+          <div class="top">
+            <span class="tour-badge" id="tour-badge"></span>
+            <button class="close-btn" id="tour-close" aria-label="Quitter la visite guidée"><i data-icon="x"></i></button>
+          </div>
+          <div class="progress"><div id="tour-progress"></div></div>
+          <div>
+            <h4 id="tour-title"></h4>
+            <p id="tour-desc"></p>
+          </div>
+          <div class="tour-controls">
+            <button class="btn btn-ghost btn-sm" id="tour-prev"><i data-icon="arrow-left" data-size="sm"></i><span>Précédent</span></button>
+            <span class="count" id="tour-count"></span>
+            <button class="btn btn-primary btn-md" id="tour-next" style="padding:.375rem 1rem"><span id="tour-next-label">Suivant</span><i data-icon="arrow-right" data-size="sm"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== MODALE ÉTUDE DE CAS ===================== -->
+    <div id="case-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
+      <div class="modal modal-case" id="case-content"></div>
+    </div>
+
+    <!-- ===================== MODALE CV ===================== -->
+    <div id="cv-modal" class="modal-backdrop cv hidden" role="dialog" aria-modal="true" aria-labelledby="cv-title">
+      <div class="modal modal-cv">
+        <div class="cv-toolbar">
+          <div class="ttl"><strong>Curriculum Vitæ</strong><span class="dot">·</span><span>Format Professionnel</span></div>
+          <div class="tools">
+            <button class="btn btn-primary btn-sm" id="cv-print"><i data-icon="printer" data-size="sm"></i><span>Imprimer / Sauvegarder PDF</span></button>
+            <button class="modal-close js-cv-close" aria-label="Fermer le CV"><i data-icon="x"></i></button>
+          </div>
+        </div>
+        <div class="cv-body" id="cv-body"></div>
+        <div class="cv-footer">
+          <span>Adji Komenan Ivan · Portfolio certifié 2026</span>
+          <button class="js-cv-close">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Vercel Web Analytics (actif uniquement une fois déployé sur Vercel) -->
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </body>
 </html>
-
