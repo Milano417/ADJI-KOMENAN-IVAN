@@ -79,4 +79,14 @@ L'interface se met à jour automatiquement.
 
 ---
 
+## 7. Formulaire de contact
+
+Les messages sont envoyés par [FormSubmit](https://formsubmit.co) vers l'email défini dans `PROFILE_DATA.email` (aucun compte ni clé API).
+
+- **Activation (une seule fois)** : le tout premier message envoyé depuis le site déclenche un email « Confirm your email » de FormSubmit. Il faut cliquer sur le lien de confirmation ; ce premier message n'est pas transmis, les suivants arrivent directement dans la boîte mail.
+- **Répondre** : un simple « Répondre » dans la boîte mail répond directement au visiteur.
+- **En cas d'échec** : le visiteur voit un lien pour écrire directement par email.
+
+---
+
 © 2026 ADJI KOMENAN IVAN « MILANO » — Tous droits réservés.

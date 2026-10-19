@@ -339,41 +339,77 @@
   }
 
   /* ---------- Formulaire de contact ---------- */
+  // Envoi via FormSubmit (https://formsubmit.co) : gratuit, sans compte.
+  // Le tout premier message déclenche un email d'activation à confirmer une seule fois.
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + PROFILE_DATA.email;
+
   function initContact() {
     const form = $('#contact-form');
     const ok = $('#form-success');
     const err = $('#form-error');
+    const errText = $('#form-error-text');
     const submit = $('#form-submit');
     const label = $('span', submit);
 
-    form.addEventListener('submit', (e) => {
+    const fail = (msg, withMailto) => {
+      errText.textContent = msg;
+      if (withMailto) {
+        const link = document.createElement('a');
+        link.href = 'mailto:' + PROFILE_DATA.email;
+        link.textContent = PROFILE_DATA.email;
+        link.style.textDecoration = 'underline';
+        errText.append(' Vous pouvez m\'écrire directement à ', link, '.');
+      }
+      err.classList.remove('hidden');
+    };
+
+    const setSending = (sending) => {
+      submit.disabled = sending;
+      label.textContent = sending ? 'Envoi en cours...' : 'Envoyer ma demande';
+    };
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if ($('#honeypot').value) return; // anti-spam
 
       const name = $('#contact-name').value.trim();
       const email = $('#contact-email').value.trim();
+      const subject = $('#contact-subject').value.trim();
+      const projectType = $('#contact-project-type').value;
       const message = $('#contact-message').value.trim();
 
       ok.classList.add('hidden');
-      const fail = (msg) => {
-        $('#form-error-text').textContent = msg;
-        err.classList.remove('hidden');
-      };
+      err.classList.add('hidden');
 
       if (!name || !email || !message) return fail('Veuillez remplir tous les champs obligatoires.');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Veuillez saisir une adresse email valide.');
 
-      err.classList.add('hidden');
-      submit.disabled = true;
-      label.textContent = 'Envoi en cours...';
+      setSending(true);
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: 'Portfolio · ' + (subject || projectType) + ' — ' + name,
+            _template: 'table',
+            _captcha: 'false',
+            Nom: name,
+            email: email,
+            'Type de projet': projectType,
+            Sujet: subject || '—',
+            Message: message,
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Envoi refusé');
 
-      // Envoi simulé, comme dans la version React
-      setTimeout(() => {
         form.reset();
-        submit.disabled = false;
-        label.textContent = 'Envoyer ma demande';
         ok.classList.remove('hidden');
-      }, 600);
+      } catch (error) {
+        fail('Le message n\'a pas pu être envoyé.', true);
+      } finally {
+        setSending(false);
+      }
     });
   }
 
