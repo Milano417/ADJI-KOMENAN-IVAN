@@ -6,17 +6,24 @@
 
 ---
 
-## 1. Vision & Identité
+## 1. Identité visuelle
 
-Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × Digital Creative × Professional**. Conçu avec une palette lumineuse et énergique dominée par le **Solar Orange (`#FF5500`)** et le **Warm Peach / Amber Light (`#FFF3EB`)**, ce produit démontre la capacité d'Ivan Milano à concevoir, modéliser, développer et déployer des applications logicielles réelles, centrées sur le résultat et l'ergonomie.
+Design immersif et animé, construit autour du logo « AI » :
 
-### Piliers de l'architecture :
-- **Ingénierie Web** : HTML5 sémantique, CSS3 moderne et JavaScript natif, sans framework ni étape de build.
-- **Rigueur Backend & Données** : Modélisation Merise / SQL, PHP, transactions MySQL.
-- **Direction Artistique & UI/UX** : Système typographique soigné (`Outfit` + `Plus Jakarta Sans`), respect de la règle zéro-pill, contrastes WCAG AA.
-- **Visite Guidée Interactive** : Parcours d'onboarding en 7 étapes avec mémorisation locale (`localStorage`).
-- **Études de Cas Détaillées** : Analyse méthodique en 7 points pour chaque projet (Problème, Réflexion, Solution, Design, Dev, Fonctionnalités, Résultat).
-- **SEO & Données Structurées** : OpenGraph, Twitter Cards, Schema.org JSON-LD (Person, WebSite).
+| Rôle | Couleur |
+| --- | --- |
+| Bleu nuit (fond principal, intro, contact) | `#070D2B` / `#0B1A55` |
+| Bleu roi (boutons, survols, plaque du logo 3D) | `#1D47C8` / `#3E66F0` |
+| Rouge (accent : bandeau, points, lignes de progression) | `#EE2F3C` |
+| Pervenche (textes en contour, particules) | `#AAB6E6` |
+
+- **Typographie** : Syne (titres), Manrope (texte), JetBrains Mono (métadonnées).
+- **3D** : le logo « AI » modélisé en relief avec Three.js, entouré de particules ; il réagit à la souris, au défilement et au clic.
+- **Animations** (GSAP + ScrollTrigger) : écran d'entrée avec tracé du logo, titres mot à mot, texte qui s'illumine au défilement, projets en défilement horizontal, lignes de progression, compteurs, bandeau qui accélère avec le défilement, curseur personnalisé, boutons magnétiques, cartes inclinées en 3D.
+- **Thèmes** : sombre par défaut, clair en option (mémorisé).
+- **Robustesse** : si la 3D ou GSAP ne se chargent pas, le contenu reste entièrement lisible (logo en image, sections affichées). Les animations sont coupées si l'appareil demande de réduire les mouvements.
+- **Accessibilité** : navigation au clavier, modales natives `<dialog>`, lien d'évitement.
+- **SEO** : OpenGraph, Twitter Cards, Schema.org JSON-LD (Person, WebSite).
 
 ---
 
@@ -24,9 +31,9 @@ Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × D
 
 - **Structure** : HTML5 sémantique
 - **Styles** : CSS3 (variables CSS, grid, flexbox, mode clair / sombre)
-- **Interactions** : JavaScript natif (ES6+), aucune dépendance
-- **Iconographie** : tracés Lucide intégrés en SVG
-- **Polices** : Outfit, Plus Jakarta Sans, JetBrains Mono (Google Fonts)
+- **Interactions** : JavaScript natif (ES6+)
+- **Bibliothèques (CDN, aucune installation)** : [Three.js](https://threejs.org) 0.160 pour la 3D, [GSAP](https://gsap.com) 3.12 + ScrollTrigger pour les animations
+- **Polices** : Syne, Manrope, JetBrains Mono (Google Fonts)
 
 ---
 
@@ -34,13 +41,14 @@ Portfolio numérique haut de gamme fondé sur les principes **Cyber Minimal × D
 
 ```text
 /
-├── index.html        # Page unique : sections, modales, SEO, OpenGraph, JSON-LD
+├── index.html        # Page unique : sections, modales, SEO, scène 3D du logo (module intégré)
 ├── css/
 │   └── style.css     # Design system complet (couleurs, typographie, mode sombre, responsive)
 ├── js/
-│   ├── data.js       # Contenu du site : profil, projets, services, compétences, parcours, visite
-│   └── main.js       # Comportements : thème, navigation, filtres, modales, visite guidée, formulaire
+│   ├── data.js       # Contenu du site : profil, projets, services, compétences, parcours
+│   └── main.js       # Comportements : animations, curseur, thème, navigation, modales, CV, formulaire
 ├── assets/
+│   ├── logo.svg      # Logo « AI » (aussi utilisé comme favicon)
 │   └── images/       # Portraits et visuels des projets
 ├── robots.txt
 └── sitemap.xml
@@ -71,7 +79,7 @@ Pour un rendu identique à la production, on peut aussi utiliser un petit serveu
 
 Tout le contenu se trouve dans `js/data.js` :
 
-- **Ajouter un projet** : ajouter une entrée dans `PROJECTS_DATA` (résumé, catégorie, image dans `assets/images/` et les 7 points de l'étude de cas).
+- **Ajouter un projet** : ajouter une entrée dans `PROJECTS_DATA` (résumé, catégorie, image dans `assets/images/` et les 7 points de l'étude de cas). Avec `featured: true`, le projet s'affiche en grand avec son image ; sinon il apparaît dans la liste « Autres projets ».
 - **Ajouter une expérience ou une formation** : compléter `EXPERIENCES_DATA` ou `EDUCATION_DATA`.
 - **Modifier les coordonnées** : modifier `PROFILE_DATA`.
 

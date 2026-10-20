@@ -1,57 +1,42 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADJI KOMENAN IVAN « MILANO » — Développeur Web & Mobile</title>
+    <title>Adji Komenan Ivan — Développeur Web & Mobile à Abidjan</title>
     <meta
       name="description"
-      content="Portfolio de Adji Komenan Ivan (MILANO) — Développeur Web & Mobile, Créateur Digital et Designer Graphique à Abidjan. Conception de solutions digitales modernes, performantes et centrées produit."
+      content="Adji Komenan Ivan (MILANO), développeur web et mobile full-stack à Abidjan. Applications métier, sites web et applications mobiles : de l'analyse du besoin à la mise en production."
     />
-    <meta name="keywords" content="développeur web Côte d'Ivoire, développeur web Abidjan, développeur mobile Côte d'Ivoire, développeur full-stack, digital creator, graphiste, MILANO, ADJI KOMENAN IVAN, React, TypeScript, PHP, MySQL" />
+    <meta name="keywords" content="développeur web Abidjan, développeur mobile Côte d'Ivoire, développeur full-stack, PHP, MySQL, React, TypeScript, ADJI KOMENAN IVAN, MILANO" />
     <meta name="author" content="ADJI KOMENAN IVAN FLORIAN EKRA" />
-    <meta name="theme-color" content="#FF5500" />
+    <meta name="theme-color" content="#070D2B" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="profile" />
-    <meta property="og:site_name" content="MILANO Portfolio" />
-    <meta property="og:title" content="ADJI KOMENAN IVAN « MILANO » — Développeur Web & Mobile" />
-    <meta
-      property="og:description"
-      content="Développeur Web & Mobile, Créateur Digital et Designer Graphique. Je conçois et développe des solutions numériques modernes, utiles et performantes."
-    />
+    <meta property="og:site_name" content="Adji Komenan Ivan" />
+    <meta property="og:title" content="Adji Komenan Ivan — Développeur Web & Mobile" />
+    <meta property="og:description" content="Développeur web et mobile full-stack à Abidjan. Applications métier, sites web et applications mobiles, de l'analyse à la mise en production." />
     <meta property="og:image" content="assets/images/ivane.png" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ADJI KOMENAN IVAN « MILANO » — Développeur Web & Mobile" />
-    <meta
-      name="twitter:description"
-      content="Développeur Web & Mobile, Créateur Digital et Designer Graphique. Solutions numériques haut de gamme de la conception au déploiement."
-    />
-    <meta name="twitter:image" content="assets/images/ivane1.png" />
+    <meta name="twitter:title" content="Adji Komenan Ivan — Développeur Web & Mobile" />
+    <meta name="twitter:description" content="Développeur web et mobile full-stack à Abidjan." />
+    <meta name="twitter:image" content="assets/images/ivane.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF5500'/%3E%3Cpath d='M30 70V30L50 52L70 30V70' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
 
-    <!-- Thème appliqué avant l'affichage (évite le flash clair/sombre) -->
+    <!-- Thème : sombre par défaut, clair si choisi -->
     <script>
       try {
-        var t = localStorage.getItem('milano_theme');
-        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
+        if (localStorage.getItem('milano_theme') === 'light') document.documentElement.classList.remove('dark');
       } catch (e) {}
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,471 +46,251 @@
           "@id": "https://milano.dev/#person",
           "name": "Adji Komenan Ivan Florian Ekra",
           "alternateName": "MILANO",
-          "jobTitle": "Web & Mobile Developer, Digital Creator, Graphic Designer",
+          "jobTitle": "Développeur Web & Mobile",
           "email": "adjikomenan@gmail.com",
-          "nationality": "Ivorian",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Abidjan",
-            "addressCountry": "CI"
-          },
-          "knowsAbout": [
-            "Web Development",
-            "Mobile Development",
-            "UI/UX Design",
-            "React",
-            "TypeScript",
-            "PHP",
-            "MySQL",
-            "Graphic Design",
-            "AI-Assisted Development"
-          ],
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "ISATECH (Institut Supérieur d'Application et de Technologie)"
-          }
+          "address": { "@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI" },
+          "knowsAbout": ["Web Development", "Mobile Development", "UI/UX Design", "PHP", "MySQL", "React", "TypeScript", "Graphic Design"],
+          "alumniOf": { "@type": "EducationalOrganization", "name": "ISATECH (Institut Supérieur d'Application et de Technologie)" }
         },
         {
           "@type": "WebSite",
           "@id": "https://milano.dev/#website",
           "url": "https://milano.dev",
-          "name": "MILANO — Portfolio Professionnel",
-          "description": "Portfolio officiel de Adji Komenan Ivan (MILANO), Développeur Web & Mobile et Créateur Digital.",
+          "name": "Adji Komenan Ivan — Portfolio",
           "inLanguage": "fr"
         }
       ]
     }
     </script>
   </head>
-  <body>
-    <!-- Preloader -->
-    <div id="preloader" aria-hidden="true">
-      <div class="preloader-inner">
-        <div class="preloader-logo">
-          AI
-          <span class="ping-dot"></span>
-        </div>
-        <div class="preloader-name">
-          <strong>ADJI IVAN-CODEV</strong>
-          <span>· digital-dev studio</span>
-        </div>
-        <div class="preloader-bar"><div></div></div>
-      </div>
+  <body class="is-loading">
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <!-- ===================== ÉCRAN D'ENTRÉE ===================== -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <svg class="loader-logo" viewBox="0 0 560 560" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path class="ld ld-bracket" d="M70 160 L36 282 L70 404" stroke-width="18" />
+        <path class="ld ld-bracket" d="M490 160 L524 282 L490 404" stroke-width="18" />
+        <path class="ld ld-white" d="M162 430 L262 126 L362 430" stroke-width="46" />
+        <path class="ld ld-red" d="M214 322 L318 296" stroke-width="30" />
+        <path class="ld ld-white" d="M438 194 L438 404" stroke-width="44" />
+        <path class="ld ld-red" d="M438 140 L438 162" stroke-width="24" />
+      </svg>
+      <div class="loader-count"><span id="loader-count">0</span>%</div>
+      <div class="loader-name">Adji Komenan Ivan</div>
     </div>
 
-    <!-- Curseur personnalisé (desktop) -->
-    <div id="cursor" aria-hidden="true">
-      <div class="cursor-ring"></div>
-      <div class="cursor-dot"></div>
-    </div>
+    <!-- Curseur personnalisé (souris uniquement) -->
+    <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label" id="cursor-label"></span></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
 
-    <!-- Easter egg (5 clics sur le logo) -->
-    <div id="easter-egg" class="hidden" role="status">
-      <div class="easter-inner">
-        <div class="easter-icon"><i data-icon="zap" data-size="sm"></i></div>
-        <div>
-          <p class="easter-title">ADJI IVAN MODE ⚡ ACTIVÉ</p>
-          <p class="easter-text">Vélocité maximale, code affûté et précision créative !</p>
-        </div>
-        <button id="easter-close" aria-label="Fermer la notification"><i data-icon="x" data-size="sm"></i></button>
-      </div>
-    </div>
+    <!-- Grain de texture -->
+    <div class="grain" aria-hidden="true"></div>
 
-    <!-- ===================== NAVBAR ===================== -->
-    <header id="navbar">
-      <div class="container">
-        <div class="nav-row">
-          <button id="logo" class="logo" title="MILANO · Développeur Web & Mobile" aria-label="MILANO Accueil">ADJI KOMENAN IVAN</button>
+    <!-- ===================== EN-TÊTE ===================== -->
+    <header class="site-header" id="header">
+      <div class="container header-row">
+        <a href="#top" class="brand" aria-label="Adji Komenan Ivan, retour en haut">
+          <img src="assets/logo.svg" alt="" width="34" height="34" />
+          <span>Adji Komenan Ivan</span>
+        </a>
 
-          <nav class="nav-links" aria-label="Navigation principale">
-            <a href="#hero" data-section="hero">Accueil</a>
-            <a href="#about" data-section="about">À propos</a>
-            <a href="#skills" data-section="skills">Compétences</a>
-            <a href="#services" data-section="services">Services</a>
-            <a href="#projects" data-section="projects">Projets</a>
-            <a href="#experience" data-section="experience">Parcours</a>
-            <a href="#contact" data-section="contact">Contact</a>
-          </nav>
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="#projets" data-section="projets"><span data-text="Projets">Projets</span></a>
+          <a href="#services" data-section="services"><span data-text="Services">Services</span></a>
+          <a href="#competences" data-section="competences"><span data-text="Compétences">Compétences</span></a>
+          <a href="#parcours" data-section="parcours"><span data-text="Parcours">Parcours</span></a>
+          <a href="#a-propos" data-section="a-propos"><span data-text="À propos">À propos</span></a>
+        </nav>
 
-          <div class="nav-actions">
-            <button class="tour-btn js-start-tour" title="Lancer la visite guidée" aria-label="Visite guidée interactive">
-              <i data-icon="compass" data-size="sm"></i>
-              <span>Visite guidée</span>
-            </button>
-            <button id="theme-toggle" class="icon-btn" aria-label="Basculer le thème"></button>
-            <a href="#contact" class="btn btn-primary btn-lift nav-cta">
-              <span>Parlons de votre projet</span>
-              <i data-icon="arrow-up-right" data-size="sm"></i>
-            </a>
-            <button id="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"></button>
-          </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden">
-          <a href="#hero" class="m-link" data-section="hero">Accueil</a>
-          <a href="#about" class="m-link" data-section="about">À propos</a>
-          <a href="#skills" class="m-link" data-section="skills">Compétences</a>
-          <a href="#services" class="m-link" data-section="services">Services</a>
-          <a href="#projects" class="m-link" data-section="projects">Projets</a>
-          <a href="#experience" class="m-link" data-section="experience">Parcours</a>
-          <a href="#contact" class="m-link" data-section="contact">Contact</a>
-          <div class="m-cta-wrap">
-            <a href="#contact" class="btn btn-primary m-link-cta">
-              <span>Parlons de votre projet</span>
-              <i data-icon="arrow-up-right" data-size="sm"></i>
-            </a>
-          </div>
+        <div class="header-actions">
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Changer de thème"></button>
+          <button class="chip-button js-open-cv" type="button">CV</button>
+          <a href="#contact" class="button button-red magnetic header-cta"><span>Me contacter</span></a>
+          <button class="icon-button menu-button" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav"></button>
         </div>
       </div>
     </header>
 
-    <main id="main-content">
-      <!-- ===================== HERO ===================== -->
-      <section id="hero" class="bg-grid-subtle">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="container">
-          <div class="hero-grid">
-            <div class="hero-left">
-              <div class="hero-kicker">
-                <span class="pulse-dot animate-pulse"></span>
-                <span>WEB &amp; MOBILE DEVELOPER · DIGITAL CREATOR · GRAPHIC DESIGNER</span>
-              </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
+      <a href="#projets"><small>01</small>Projets</a>
+      <a href="#services"><small>02</small>Services</a>
+      <a href="#competences"><small>03</small>Compétences</a>
+      <a href="#parcours"><small>04</small>Parcours</a>
+      <a href="#a-propos"><small>05</small>À propos</a>
+      <a href="#contact"><small>06</small>Contact</a>
+    </nav>
 
-              <div>
-                <h1 class="hero-title">Je transforme des idées en <span>expériences digitales.</span></h1>
-                <div class="hero-name">
-                  <span class="full" data-bind="fullName"></span>
-                  <span class="slash">/</span>
-                  <span class="alias">« <span data-bind="professionalName"></span> »</span>
-                </div>
-              </div>
-
-              <p class="hero-text" id="hero-text"></p>
-
-              <div class="hero-proofs">
-                <div><i data-icon="map-pin"></i><span>Abidjan, Côte d'Ivoire</span></div>
-                <span class="sep" aria-hidden="true">·</span>
-                <div><i data-icon="sparkles"></i><span>Full-Stack &amp; UI/UX</span></div>
-                <span class="sep" aria-hidden="true">·</span>
-                <div><span class="green-dot"></span><span class="avail">Disponible pour projets</span></div>
-              </div>
-
-              <div class="hero-ctas">
-                <a href="#projects" class="btn btn-primary btn-lift-2">
-                  <span>Découvrir mon travail</span>
-                  <i data-icon="arrow-up-right"></i>
-                </a>
-                <a href="#contact" class="btn btn-outline btn-lift-2"><span>Me contacter</span></a>
-                <button class="btn btn-link js-open-cv" title="Consulter et télécharger le CV">
-                  <i data-icon="file-text"></i>
-                  <span>Voir mon CV</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="hero-right">
-              <div class="portrait-wrap">
-                <div class="portrait">
-                  <img src="assets/images/ivane.png" alt="Portrait officiel de Adji Komenan Ivan « Milano »" />
-                  <div class="portrait-scrim"></div>
-                  <div class="portrait-card">
-                    <div class="row">
-                      <strong>ADJI IVAN</strong>
-                      <span class="online"><span class="green-dot animate-pulse"></span>En ligne</span>
-                    </div>
-                    <p>Développeur Web &amp; Mobile · Créateur Digital</p>
-                  </div>
-                </div>
-                <div class="portrait-accent" aria-hidden="true"></div>
-              </div>
+    <main id="main">
+      <!-- ===================== INTRODUCTION ===================== -->
+      <section class="hero" id="top">
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="overline" data-intro><span class="mark"></span>Développeur web &amp; mobile — Abidjan</p>
+            <h1 class="hero-title" aria-label="Je transforme vos idées en applications web et mobiles.">
+              <span class="line"><span class="word">Je</span> <span class="word">transforme</span></span>
+              <span class="line"><span class="word">vos</span> <span class="word">idées</span> <span class="word">en</span></span>
+              <span class="line"><span class="word outline">applications</span></span>
+              <span class="line"><span class="word">web</span> <span class="word">&amp;</span> <span class="word">mobiles<i class="red-dot"></i></span></span>
+            </h1>
+            <p class="hero-lead" data-intro>
+              Je suis Adji Komenan Ivan, alias <strong>MILANO</strong>. J'accompagne vos projets de A à Z :
+              analyse du besoin, design de l'interface, base de données, développement et mise en ligne.
+            </p>
+            <div class="hero-actions" data-intro>
+              <a href="#projets" class="button button-primary magnetic"><span>Voir mes projets</span><span class="button-arrow">↓</span></a>
+              <a href="#contact" class="button button-ghost magnetic"><span>Démarrer un projet</span></a>
             </div>
           </div>
 
-          <div class="scroll-indicator">
-            <a href="#about" aria-label="Faire défiler vers la section À propos">
-              <span>Explorer mon univers</span>
-              <div class="scroll-circle"><i data-icon="arrow-down"></i></div>
-            </a>
+          <div class="hero-visual" id="hero-visual">
+            <img class="hero-fallback" src="assets/logo.svg" alt="" />
+            <div class="hero-orbit" aria-hidden="true"></div>
           </div>
+        </div>
+
+        <div class="container hero-bottom" data-intro>
+          <dl class="hero-facts">
+            <div><dt>Spécialité</dt><dd>Full-stack web &amp; mobile</dd></div>
+            <div><dt>Stack</dt><dd>PHP · MySQL · React · TypeScript</dd></div>
+            <div><dt>Basé à</dt><dd>Abidjan, Côte d'Ivoire</dd></div>
+            <div><dt>Statut</dt><dd><span class="status-dot"></span>Disponible</dd></div>
+          </dl>
+          <a href="#a-propos" class="scroll-hint" aria-label="Défiler vers la suite">
+            <span>Défiler</span><span class="scroll-line"></span>
+          </a>
         </div>
       </section>
 
-      <!-- ===================== ABOUT ===================== -->
-      <section id="about" class="section section-white">
+      <!-- ===================== BANDEAU TECHNOLOGIES ===================== -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marquee-track"></div>
+      </div>
+
+      <!-- ===================== À PROPOS ===================== -->
+      <section class="section about" id="a-propos" aria-labelledby="a-propos-title">
         <div class="container">
-          <div class="section-head">
-            <span class="eyebrow">02 · Storytelling &amp; Vision</span>
-            <h2 class="section-title">Derrière ADJI IVAN</h2>
-            <p class="section-lead">Comprendre le problème avant d'écrire une seule ligne de code : telle est ma définition de l'ingénierie numérique.</p>
-          </div>
+          <p class="section-label" data-reveal><span>01</span>À propos</p>
+          <h2 id="a-propos-title" class="visually-hidden">À propos</h2>
+          <p class="statement" id="statement">
+            Je combine le développement full-stack et le design graphique pour construire des outils simples, rapides et réellement adoptés par ceux qui les utilisent.
+          </p>
 
           <div class="about-grid">
-            <div class="about-story">
-              <div class="story">
-                <p>Je m'appelle <strong>ADJI KOMENAN IVAN FLORIAN EKRA</strong>, plus connu sous le nom de <strong class="accent">MILANO</strong>. Je suis un jeune développeur et créateur digital ivoirien basé à Abidjan.</p>
-                <p>Mon approche se distingue par une double compétence rare : la rigueur de l'architecture logicielle full-stack alliée à la sensibilité du design graphique. Ayant exercé en environnement d'imprimerie (CIMIF) et dans le conseil opérationnel de systèmes d'information (Hôtel de la Paix / SONAPIE), je sais que le succès d'un outil digital ne se mesure pas au nombre de lignes de code, mais à son adoption par les utilisateurs finaux.</p>
-                <p>Qu'il s'agisse de concevoir un système de caisse pour un commerce local, une plateforme de gestion hôtelière ou une présence en ligne institutionnelle, je m'assure que chaque interaction soit limpide, performante et directement rentable pour l'organisation.</p>
-              </div>
-
-              <div class="pillars">
-                <div class="pillar">
-                  <div class="icon-box"><i data-icon="code"></i></div>
-                  <h3>Code Propre &amp; Robuste</h3>
-                  <p>Développement full-stack (React, TypeScript, PHP, MySQL) structuré selon les standards modernes, garantissant évolutivité et maintenabilité.</p>
-                </div>
-                <div class="pillar">
-                  <div class="icon-box"><i data-icon="palette"></i></div>
-                  <h3>Sensibilité Design &amp; UI/UX</h3>
-                  <p>Une culture visuelle aiguisée par l'imprimerie et le graphisme : chaque interface est épurée, ergonomique et centrée utilisateur.</p>
-                </div>
-                <div class="pillar">
-                  <div class="icon-box"><i data-icon="smartphone"></i></div>
-                  <h3>Mobile &amp; Multi-Plateforme</h3>
-                  <p>Création d'expériences optimisées pour les usages réels en Afrique de l'Ouest : rapidité, zones tactiles intuitives et résilience réseau.</p>
-                </div>
-                <div class="pillar">
-                  <div class="icon-box"><i data-icon="brain"></i></div>
-                  <h3>Ingénierie Assistée par IA</h3>
-                  <p>Utilisation des outils d'intelligence artificielle pour accélérer le prototypage, sécuriser les flux et concevoir des solutions innovantes.</p>
-                </div>
-              </div>
-
-              <div class="actions">
-                <button class="btn btn-primary btn-lg js-open-cv">
-                  <span>Consulter le CV complet</span>
-                  <i data-icon="arrow-up-right" data-size="sm"></i>
-                </button>
-                <a href="#workflow" class="link-arrow"><span>Découvrir ma méthode de travail</span><b>→</b></a>
-              </div>
-            </div>
-
-            <div class="about-side">
-              <div class="studio-photo">
-                <img src="assets/images/ivane1.png" alt="Adji Komenan Ivan Milano en atelier créatif" loading="lazy" />
-                <div class="scrim"></div>
-                <div class="caption">ADJI IVAN · En studio créatif &amp; technique</div>
-              </div>
-
-              <div class="timeline-card">
-                <h3><i data-icon="layers"></i><span>Parcours d'évolution</span></h3>
-                <div class="timeline">
-                  <div class="milestone">
-                    <div class="row"><span class="year">2023 – 2025</span><span class="place">ISATECH · Abidjan</span></div>
-                    <h4>Formation BTS Informatique Développeur d'Applications</h4>
-                    <p>Acquisition des fondements de l'algorithmique, de la modélisation Merise/SQL, de la programmation web et de la conception logicielle.</p>
-                  </div>
-                  <div class="milestone">
-                    <div class="row"><span class="year">Fin 2025</span><span class="place">Hôtel de la Paix / SONAPIE</span></div>
-                    <h4>Conseil &amp; Digitalisation en Système d'Information</h4>
-                    <p>Immersion opérationnelle, analyse des flux de réception, facturation et modélisation du prototype HotelFlow.</p>
-                  </div>
-                  <div class="milestone">
-                    <div class="row"><span class="year">2025 – 2026</span><span class="place">CIMIF Imprimerie</span></div>
-                    <h4>PAO &amp; Communication Visuelle</h4>
-                    <p>Rigueur technique du print, conception de chartes graphiques professionnelles et gestion des spécifications d'impression.</p>
-                  </div>
-                  <div class="milestone">
-                    <div class="row"><span class="year">2026</span><span class="place">Écosystème Digital Indépendant</span></div>
-                    <h4>Lancement de MILAWEB &amp; Projets Métiers</h4>
-                    <p>Développement de solutions complètes (MILAWEB, CaisPro, AlertCI, Milyshop) du cahier des charges jusqu'au produit final.</p>
-                  </div>
-                </div>
-              </div>
+            <figure class="about-photo" data-reveal>
+              <div class="about-photo-inner"><img src="assets/images/ivane.png" alt="Portrait d'Adji Komenan Ivan" loading="lazy" /></div>
+              <figcaption>Adji Komenan Ivan Florian Ekra — « MILANO »</figcaption>
+            </figure>
+            <div class="about-text">
+              <p data-reveal>Basé à Abidjan, je suis titulaire d'un BTS Développeur d'Applications (ISATECH). Mon passage en imprimerie chez CIMIF m'a donné l'exigence du détail visuel ; mon stage à l'Hôtel de la Paix (SONAPIE) m'a appris à observer un métier avant de lui proposer un outil. C'est là qu'est né HotelFlow.</p>
+              <p data-reveal>Je pense chaque projet pour les réalités du terrain : connexions mobiles, utilisateurs pressés, besoin de fiabilité. J'utilise l'IA pour accélérer le prototypage et les tests, en gardant la main sur l'architecture, la sécurité et la qualité du code.</p>
+              <ul class="about-keys" data-reveal>
+                <li><strong>10</strong><span>projets conçus et développés</span></li>
+                <li><strong>2</strong><span>missions en entreprise</span></li>
+                <li><strong>7</strong><span>domaines de services</span></li>
+              </ul>
+              <div data-reveal><button type="button" class="button button-ghost magnetic js-open-cv"><span>Consulter mon CV</span></button></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================== SKILLS ===================== -->
-      <section id="skills" class="section section-alt">
-        <div class="container stack-16">
-          <div class="section-head">
-            <span class="eyebrow">03 · Compétences &amp; Technologies</span>
-            <h2 class="section-title">Savoir-faire technique par la preuve</h2>
-            <p class="section-lead">Pas de faux pourcentages ni de jauges arbitraires : un socle de compétences concrètes, éprouvées sur des projets déployés et des systèmes opérationnels.</p>
+      <!-- ===================== PROJETS ===================== -->
+      <section class="projects" id="projets" aria-labelledby="projets-title">
+        <div class="projects-pin" id="projects-pin">
+          <div class="container projects-head">
+            <p class="section-label"><span>02</span>Projets</p>
+            <h2 id="projets-title" class="section-title">Projets<br />sélectionnés</h2>
+            <p class="projects-hint">Touchez un projet pour ouvrir son étude de cas</p>
           </div>
+          <div class="projects-track" id="projects-track"></div>
+        </div>
 
-          <div class="tabs" id="skill-tabs" role="tablist"></div>
-
-          <div class="skill-panel">
-            <div class="skill-panel-head">
-              <h3 id="skill-title"></h3>
-              <p id="skill-desc"></p>
-            </div>
-            <div class="grid md-2 lg-3 skill-grid" id="skill-items"></div>
-          </div>
-
-          <div>
-            <span class="tech-wall-label">Technologies &amp; Écosystème Quotidien</span>
-            <div class="tech-wall" id="tech-wall"></div>
-          </div>
-
-          <div class="ai-banner">
-            <div class="ai-inner">
-              <div class="ai-kicker"><i data-icon="sparkles"></i><span>APPROCHE HYBRIDE · MILANO + IA</span></div>
-              <h3>« Je combine développement logiciel, design et outils d'intelligence artificielle pour accélérer la conception et améliorer la qualité des produits numériques. »</h3>
-              <p>Pour moi, l'intelligence artificielle n'est pas un substitut au développeur, mais un puissant amplificateur de productivité. Elle permet d'explorer plus rapidement les hypothèses architecturales, d'automatiser les tests de non-régression et d'affiner l'expérience utilisateur, tandis que mon esprit critique d'ingénieur garantit la sécurité, la structure des bases de données et la pertinence métier.</p>
-              <div class="ai-stats">
-                <div><i data-icon="zap"></i><span>Vélocité de prototypage ×3</span></div>
-                <div><i data-icon="shield-check"></i><span>Rigueur de typage &amp; sécurité</span></div>
-                <div><i data-icon="cpu"></i><span>Architecture 100% maîtrisée</span></div>
-              </div>
-            </div>
-          </div>
+        <div class="container others">
+          <h3 class="others-title" data-reveal>Autres projets</h3>
+          <ul class="others-list" id="others-list"></ul>
         </div>
       </section>
 
       <!-- ===================== SERVICES ===================== -->
-      <section id="services" class="section section-white">
-        <div class="container stack-16">
-          <div class="section-head">
-            <span class="eyebrow">04 · Services &amp; Solutions</span>
-            <h2 class="section-title">Des réponses précises à chaque enjeu numérique</h2>
-            <p class="section-lead">De la vitrine institutionnelle jusqu'au système d'information complet, j'accompagne entreprises, créateurs et organisations avec une exigence de résultats concrets.</p>
-          </div>
-          <div class="grid md-2 lg-3" id="services-grid"></div>
+      <section class="section services" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <p class="section-label" data-reveal><span>03</span>Services</p>
+          <h2 id="services-title" class="section-title" data-reveal>Ce que je<br />construis pour vous</h2>
+          <ol class="service-list" id="service-list"></ol>
         </div>
       </section>
 
-      <!-- ===================== PROJECTS ===================== -->
-      <section id="projects" class="section section-alt">
-        <div class="container stack-16">
-          <div class="projects-head">
-            <div class="section-head">
-              <span class="eyebrow">05 · Réalisations &amp; Études de Cas</span>
-              <h2 class="section-title">Projets réels, architecture &amp; conception</h2>
-              <p class="section-lead">Chaque projet ci-dessous représente une problématique concrète analysée et résolue. Cliquez sur un projet pour consulter son étude de cas détaillée.</p>
-            </div>
-            <div class="tabs tabs-sm" id="project-filters">
-              <button class="tab active" data-filter="all">Tous les projets</button>
-              <button class="tab" data-filter="system">Systèmes de Gestion</button>
-              <button class="tab" data-filter="web">Applications Web</button>
-              <button class="tab" data-filter="ecommerce">E-Commerce</button>
-              <button class="tab" data-filter="brand">Branding &amp; Print</button>
-            </div>
+      <!-- ===================== MÉTHODE ===================== -->
+      <section class="section process-section" aria-labelledby="process-title">
+        <div class="container process-grid">
+          <div class="process-intro">
+            <p class="section-label" data-reveal><span>04</span>Méthode</p>
+            <h2 id="process-title" class="section-title" data-reveal>Sept étapes,<br />zéro surprise</h2>
+            <p class="section-text" data-reveal>Un processus clair, du premier échange jusqu'au suivi après la mise en ligne.</p>
           </div>
-          <div class="grid md-2 lg-3 projects-grid" id="projects-grid"></div>
+          <div class="process-steps">
+            <div class="process-line"><span id="process-progress"></span></div>
+            <ol id="process"></ol>
+          </div>
         </div>
       </section>
 
-      <!-- ===================== WORKFLOW ===================== -->
-      <section id="workflow" class="section section-white">
-        <div class="container stack-16">
-          <div class="section-head">
-            <span class="eyebrow">06 · Méthodologie &amp; Rigueur</span>
-            <h2 class="section-title">Comment je travaille</h2>
-            <p class="section-lead">Un processus structuré en 7 étapes séquentielles, garantissant clarté, anticipation des risques et livraison dans les délais.</p>
-          </div>
-          <div class="grid md-2 lg-3" id="workflow-grid"></div>
+      <!-- ===================== COMPÉTENCES ===================== -->
+      <section class="section skills-section" id="competences" aria-labelledby="competences-title">
+        <div class="container">
+          <p class="section-label" data-reveal><span>05</span>Compétences</p>
+          <h2 id="competences-title" class="section-title" data-reveal>Ma boîte<br />à outils</h2>
+          <div class="skills" id="skills"></div>
         </div>
       </section>
 
-      <!-- ===================== EXPERIENCE ===================== -->
-      <section id="experience" class="section section-alt">
-        <div class="container stack-16">
-          <div class="section-head">
-            <span class="eyebrow">07 · Expériences &amp; Formation</span>
-            <h2 class="section-title">Parcours professionnel &amp; académique</h2>
-            <p class="section-lead">Une trajectoire bâtie sur le terrain : formation d'ingénierie applicative, missions en imprimerie de production et audit des processus d'accueil hôtelier.</p>
-          </div>
-
-          <div class="exp-grid">
-            <div>
-              <div class="col-head"><i data-icon="briefcase"></i><h3>Expériences Professionnelles</h3></div>
-              <div class="stack-6" id="exp-list"></div>
-            </div>
-            <div>
-              <div class="col-head"><i data-icon="graduation-cap" data-class="green"></i><h3>Diplômes &amp; Formation</h3></div>
-              <div class="stack-6">
-                <div id="edu-list" class="stack-6"></div>
-                <div class="placeholder-note">Section extensible pour formations continues et certifications spécialisées futures.</div>
-              </div>
-            </div>
+      <!-- ===================== PARCOURS ===================== -->
+      <section class="section journey" id="parcours" aria-labelledby="parcours-title">
+        <div class="container">
+          <p class="section-label" data-reveal><span>06</span>Parcours</p>
+          <h2 id="parcours-title" class="section-title" data-reveal>Expérience<br />&amp; formation</h2>
+          <div class="timeline">
+            <div class="timeline-line"><span id="timeline-progress"></span></div>
+            <ol id="timeline-list"></ol>
           </div>
         </div>
       </section>
 
       <!-- ===================== CONTACT ===================== -->
-      <section id="contact" class="section section-white">
-        <div class="container stack-16">
-          <div class="section-head">
-            <span class="eyebrow">08 · Contact Direct &amp; Collaboration</span>
-            <h2 class="section-title">Parlons de votre projet.</h2>
-            <p class="section-lead">Vous avez une idée, un projet ou un besoin numérique ? Échangeons sur la meilleure manière de le transformer en solution.</p>
-          </div>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <p class="section-label" data-reveal><span>07</span>Contact</p>
+          <h2 id="contact-title" class="contact-title">
+            <span class="line"><span class="word">Parlons</span> <span class="word">de</span></span>
+            <span class="line"><span class="word outline">votre projet</span><i class="red-dot"></i></span>
+          </h2>
 
           <div class="contact-grid">
-            <div class="contact-info">
-              <div>
-                <h3>Coordonnées directes</h3>
-                <p class="small">Réponse garantie sous 24h ouvrées.</p>
-              </div>
-
-              <div class="contact-lines">
-                <a class="contact-line js-mailto">
-                  <div class="box"><i data-icon="mail"></i></div>
-                  <div>
-                    <span class="lbl">Email professionnel</span>
-                    <span class="val" data-bind="email"></span>
-                  </div>
-                </a>
-                <div class="contact-line">
-                  <div class="box neutral"><i data-icon="map-pin"></i></div>
-                  <div>
-                    <span class="lbl">Localisation</span>
-                    <span class="val" data-bind="location"></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="socials-block">
-                <span class="lbl">Réseaux Professionnels</span>
-                <div class="social-chips">
-                  <a class="social-chip js-linkedin" target="_blank" rel="noreferrer">
-                    <i data-icon="linkedin" data-size="sm"></i><span>LinkedIn</span><i data-icon="arrow-up-right" data-size="xs"></i>
-                  </a>
-                  <a class="social-chip js-github" target="_blank" rel="noreferrer">
-                    <i data-icon="github" data-size="sm"></i><span>GitHub</span><i data-icon="arrow-up-right" data-size="xs"></i>
-                  </a>
-                </div>
-              </div>
+            <div class="contact-side" data-reveal>
+              <p>Une idée, un besoin de digitalisation ou une collaboration ? Décrivez-moi votre projet, je vous réponds rapidement.</p>
+              <a class="contact-mail js-mailto" data-bind="email"></a>
+              <ul class="contact-links">
+                <li><a class="js-linkedin magnetic" target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
+                <li><a class="js-github magnetic" target="_blank" rel="noreferrer">GitHub ↗</a></li>
+              </ul>
             </div>
 
-            <form id="contact-form" novalidate>
-              <!-- Champ anti-spam (honeypot) -->
-              <input type="text" name="user_nickname" id="honeypot" class="hidden" tabindex="-1" autocomplete="off" />
-
-              <div id="form-success" class="alert alert-success hidden">
-                <i data-icon="check-circle"></i>
-                <div>
-                  <h4>Message envoyé avec succès.</h4>
-                  <p>Merci pour votre sollicitation. Je reviendrai vers vous très rapidement par email.</p>
-                </div>
-              </div>
-
-              <div id="form-error" class="alert alert-error hidden">
-                <i data-icon="alert-circle"></i>
-                <p id="form-error-text"></p>
-              </div>
-
+            <form id="contact-form" class="form" novalidate data-reveal>
+              <input type="text" name="user_nickname" id="honeypot" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="form-row">
                 <div class="field">
-                  <label for="contact-name">Nom complet <span>*</span></label>
-                  <input id="contact-name" name="name" type="text" required placeholder="ex. Jean Marc Koffi" />
+                  <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder=" " />
+                  <label for="contact-name">Nom complet</label>
                 </div>
                 <div class="field">
-                  <label for="contact-email">Email professionnel <span>*</span></label>
-                  <input id="contact-email" name="email" type="email" required placeholder="ex. contact@entreprise.ci" />
+                  <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder=" " />
+                  <label for="contact-email">Email</label>
                 </div>
               </div>
-
               <div class="form-row">
-                <div class="field">
-                  <label for="contact-subject">Sujet de l'échange</label>
-                  <input id="contact-subject" name="subject" type="text" placeholder="ex. Refonte de plateforme web" />
-                </div>
-                <div class="field">
-                  <label for="contact-project-type">Type de projet</label>
+                <div class="field field-select">
                   <select id="contact-project-type" name="projectType">
                     <option>Site web</option>
                     <option>Application web</option>
@@ -534,139 +299,272 @@
                     <option>Solution digitale</option>
                     <option>Autre</option>
                   </select>
+                  <label for="contact-project-type">Type de projet</label>
+                </div>
+                <div class="field">
+                  <input id="contact-subject" name="subject" type="text" placeholder=" " />
+                  <label for="contact-subject">Sujet (facultatif)</label>
                 </div>
               </div>
-
               <div class="field">
-                <label for="contact-message">Votre message ou description du besoin <span>*</span></label>
-                <textarea id="contact-message" name="message" required rows="4" placeholder="Décrivez brièvement les objectifs de votre projet, les fonctionnalités souhaitées ou votre calendrier..."></textarea>
+                <textarea id="contact-message" name="message" required rows="4" placeholder=" "></textarea>
+                <label for="contact-message">Votre message</label>
               </div>
-
-              <div class="form-foot">
-                <span class="req">* Champs obligatoires</span>
-                <button type="submit" id="form-submit" class="btn btn-primary btn-lift">
-                  <i data-icon="send" data-size="sm"></i>
-                  <span>Envoyer ma demande</span>
-                </button>
-              </div>
+              <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+              <button type="submit" id="form-submit" class="button button-red magnetic button-send"><span>Envoyer le message</span><span class="button-arrow">→</span></button>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="footer">
+    <!-- ===================== PIED DE PAGE ===================== -->
+    <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div>
-              <span class="name" data-bind="fullName"></span>
-              <span class="role">« <span data-bind="professionalName"></span> » · <span data-bind="role"></span></span>
-            </div>
-            <p>Conception et développement de solutions logicielles complètes, d'applications mobiles réactives et d'identités visuelles à fort impact.</p>
-            <div class="footer-socials">
-              <a class="js-linkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn de Milano"><i data-icon="linkedin"></i></a>
-              <a class="js-github" target="_blank" rel="noreferrer" aria-label="GitHub de Milano"><i data-icon="github"></i></a>
-              <a class="js-mailto" aria-label="Envoyer un email à Milano"><i data-icon="mail"></i></a>
-            </div>
-          </div>
-
-          <div>
-            <span class="footer-label">Navigation</span>
-            <div class="footer-nav">
-              <a href="#hero">Accueil</a>
-              <a href="#about">À propos</a>
-              <a href="#skills">Compétences</a>
-              <a href="#services">Services</a>
-              <a href="#projects">Projets</a>
-              <a href="#workflow">Méthodologie</a>
-              <a href="#experience">Expériences</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-
-          <div>
-            <span class="footer-label">Interactivité</span>
-            <div class="footer-actions">
-              <button class="btn-replay js-start-tour"><i data-icon="compass" data-size="sm"></i><span>Rejouer la visite</span></button>
-              <button class="btn-top" id="to-top"><i data-icon="arrow-up" data-size="sm"></i><span>Haut de page</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 MILANO. Tous droits réservés.</p>
-          <p>Conçu &amp; développé avec rigueur et passion à Abidjan</p>
+        <p class="footer-giant" aria-hidden="true" id="footer-giant">ADJI&nbsp;KOMENAN&nbsp;IVAN</p>
+        <div class="footer-row">
+          <span>© 2026 Adji Komenan Ivan — MILANO</span>
+          <nav class="footer-links" aria-label="Liens du pied de page">
+            <a class="js-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="js-github" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="js-mailto">Email</a>
+            <a href="#top">Haut de page ↑</a>
+          </nav>
         </div>
       </div>
     </footer>
 
-    <!-- ===================== VISITE GUIDÉE ===================== -->
-    <div id="tour" class="hidden" role="dialog" aria-modal="true" aria-labelledby="tour-heading">
-      <div class="tour-card">
-        <div id="tour-welcome" class="tour-welcome">
-          <div class="top">
-            <div class="who">
-              <div class="box"><i data-icon="sparkles" data-size="lg"></i></div>
-              <div>
-                <h3 id="tour-heading">Bienvenue dans mon portfolio 👋</h3>
-                <p>ADJI KOMENAN IVAN · MILANO</p>
-              </div>
-            </div>
-            <button class="close-btn js-tour-dismiss" aria-label="Fermer la bienvenue"><i data-icon="x"></i></button>
-          </div>
-          <p>Je peux vous faire découvrir rapidement mon parcours, mes compétences et mes projets à travers une visite guidée interactive en 7 étapes.</p>
-          <div class="btns">
-            <button class="btn btn-ghost btn-md js-tour-dismiss" style="font-weight:600">Explorer seul</button>
-            <button class="btn btn-primary btn-md" id="tour-begin"><i data-icon="compass" data-size="sm"></i><span>Commencer la visite</span></button>
-          </div>
-        </div>
+    <!-- ===================== ÉTUDE DE CAS ===================== -->
+    <dialog class="modal modal-wide" id="case-modal" aria-labelledby="case-title">
+      <div class="modal-inner" id="case-content"></div>
+    </dialog>
 
-        <div id="tour-step" class="tour-step hidden">
-          <div class="top">
-            <span class="tour-badge" id="tour-badge"></span>
-            <button class="close-btn" id="tour-close" aria-label="Quitter la visite guidée"><i data-icon="x"></i></button>
-          </div>
-          <div class="progress"><div id="tour-progress"></div></div>
-          <div>
-            <h4 id="tour-title"></h4>
-            <p id="tour-desc"></p>
-          </div>
-          <div class="tour-controls">
-            <button class="btn btn-ghost btn-sm" id="tour-prev"><i data-icon="arrow-left" data-size="sm"></i><span>Précédent</span></button>
-            <span class="count" id="tour-count"></span>
-            <button class="btn btn-primary btn-md" id="tour-next" style="padding:.375rem 1rem"><span id="tour-next-label">Suivant</span><i data-icon="arrow-right" data-size="sm"></i></button>
+    <!-- ===================== CV ===================== -->
+    <dialog class="modal" id="cv-modal" aria-labelledby="cv-title">
+      <div class="modal-inner">
+        <div class="modal-bar">
+          <span class="modal-bar-title">Curriculum vitæ</span>
+          <div class="modal-bar-actions">
+            <button type="button" class="button button-primary button-small" id="cv-print"><span>Imprimer / PDF</span></button>
+            <button type="button" class="icon-button js-close" aria-label="Fermer le CV"></button>
           </div>
         </div>
+        <div class="modal-body cv" id="cv-body"></div>
       </div>
-    </div>
+    </dialog>
 
-    <!-- ===================== MODALE ÉTUDE DE CAS ===================== -->
-    <div id="case-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
-      <div class="modal modal-case" id="case-content"></div>
-    </div>
+    <!-- Animations : GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/main.js" defer></script>
 
-    <!-- ===================== MODALE CV ===================== -->
-    <div id="cv-modal" class="modal-backdrop cv hidden" role="dialog" aria-modal="true" aria-labelledby="cv-title">
-      <div class="modal modal-cv">
-        <div class="cv-toolbar">
-          <div class="ttl"><strong>Curriculum Vitæ</strong><span class="dot">·</span><span>Format Professionnel</span></div>
-          <div class="tools">
-            <button class="btn btn-primary btn-sm" id="cv-print"><i data-icon="printer" data-size="sm"></i><span>Imprimer / Sauvegarder PDF</span></button>
-            <button class="modal-close js-cv-close" aria-label="Fermer le CV"><i data-icon="x"></i></button>
-          </div>
-        </div>
-        <div class="cv-body" id="cv-body"></div>
-        <div class="cv-footer">
-          <span>Adji Komenan Ivan · Portfolio certifié 2026</span>
-          <button class="js-cv-close">Fermer</button>
-        </div>
-      </div>
-    </div>
+    <!-- 3D : Three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <!-- Intégré dans la page pour fonctionner aussi en ouvrant le fichier directement -->
+    <script type="module">
+      /* =========================================================
+         Logo « AI » en 3D (Three.js) pour l'introduction
+         Si WebGL ou le chargement échoue, le logo SVG reste affiché.
+         ========================================================= */
+      import * as THREE from 'three';
+      import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+      import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+      const container = document.getElementById('hero-visual');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function supportsWebGL() {
+        try {
+          const c = document.createElement('canvas');
+          return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl')));
+        } catch (e) {
+          return false;
+        }
+      }
+
+      if (container && supportsWebGL()) init();
+
+      function init() {
+        const isSmall = window.innerWidth < 760;
+
+        /* ---------- Rendu ---------- */
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall ? 1.5 : 2));
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.05;
+        container.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene();
+        const pmrem = new THREE.PMREMGenerator(renderer);
+        scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+        const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+        camera.position.set(0, 0, 15);
+
+        /* ---------- Lumières ---------- */
+        scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+        const key = new THREE.DirectionalLight(0xffffff, 1.6);
+        key.position.set(4, 6, 8);
+        scene.add(key);
+        const rim = new THREE.PointLight(0x3e66f0, 40, 30);
+        rim.position.set(-6, -3, 2);
+        scene.add(rim);
+        const warm = new THREE.PointLight(0xee2f3c, 18, 20);
+        warm.position.set(6, -4, 4);
+        scene.add(warm);
+
+        /* ---------- Logo ---------- */
+        const logo = new THREE.Group();
+        scene.add(logo);
+
+        // Coordonnées reprises du SVG du logo (viewBox 560 × 560)
+        const S = 100;
+        const P = (x, y, z = 0) => new THREE.Vector3((x - 280) / S, -(y - 280) / S, z);
+
+        const plate = new THREE.Mesh(
+          new RoundedBoxGeometry(5.6, 5.6, 0.7, 8, 1.15),
+          new THREE.MeshPhysicalMaterial({ color: 0x1638b0, roughness: 0.32, metalness: 0.15, clearcoat: 1, clearcoatRoughness: 0.18 })
+        );
+        logo.add(plate);
+
+        const white = new THREE.MeshStandardMaterial({ color: 0xf7f8fa, roughness: 0.25, metalness: 0.05 });
+        const red = new THREE.MeshStandardMaterial({ color: 0xee2f3c, roughness: 0.3, metalness: 0.1, emissive: 0x5a0008, emissiveIntensity: 0.4 });
+        const peri = new THREE.MeshStandardMaterial({ color: 0xaab6e6, roughness: 0.35, metalness: 0.2, transparent: true, opacity: 0.85 });
+
+        // Segment arrondi (capsule) entre deux points
+        function stroke(a, b, width, material) {
+          const r = width / 2 / S;
+          const dir = new THREE.Vector3().subVectors(b, a);
+          const len = Math.max(dir.length(), 0.0001);
+          const mesh = new THREE.Mesh(new THREE.CapsuleGeometry(r, len, 8, 24), material);
+          mesh.position.copy(a).add(b).multiplyScalar(0.5);
+          mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.normalize());
+          logo.add(mesh);
+          return mesh;
+        }
+
+        const zFront = 0.5;
+        stroke(P(162, 430, zFront), P(262, 126, zFront), 46, white);
+        stroke(P(262, 126, zFront), P(362, 430, zFront), 46, white);
+        stroke(P(438, 194, zFront), P(438, 404, zFront), 44, white);
+        const bar = stroke(P(214, 322, zFront + 0.22), P(318, 296, zFront + 0.22), 30, red);
+        stroke(P(438, 140, zFront + 0.1), P(438, 162, zFront + 0.1), 24, red);
+        const dot = new THREE.Mesh(new THREE.SphereGeometry(13 / S, 24, 24), red);
+        dot.position.copy(P(438, 198, zFront + 0.24));
+        logo.add(dot);
+
+        [[70, 160, 36, 282, 70, 404], [490, 160, 524, 282, 490, 404]].forEach(([x1, y1, x2, y2, x3, y3]) => {
+          stroke(P(x1, y1, zFront - 0.05), P(x2, y2, zFront - 0.05), 18, peri);
+          stroke(P(x2, y2, zFront - 0.05), P(x3, y3, zFront - 0.05), 18, peri);
+        });
+
+        logo.scale.setScalar(isSmall ? 0.95 : 1.02);
+        logo.rotation.set(0.12, -0.42, 0.05);
+
+        /* ---------- Particules ---------- */
+        const count = isSmall ? 260 : 620;
+        const positions = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
+          const r = 4.5 + Math.random() * 6;
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos(2 * Math.random() - 1);
+          positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+          positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta) * 0.7;
+          positions[i * 3 + 2] = r * Math.cos(phi) - 3;
+        }
+        const pGeo = new THREE.BufferGeometry();
+        pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xaab6e6, size: 0.035, transparent: true, opacity: 0.75, depthWrite: false }));
+        scene.add(particles);
+
+        // Quelques points rouges, comme l'accent du logo
+        const accentCount = isSmall ? 16 : 34;
+        const aPos = new Float32Array(accentCount * 3);
+        for (let i = 0; i < accentCount; i++) {
+          aPos[i * 3] = (Math.random() - 0.5) * 12;
+          aPos[i * 3 + 1] = (Math.random() - 0.5) * 8;
+          aPos[i * 3 + 2] = (Math.random() - 0.5) * 6 - 1;
+        }
+        const aGeo = new THREE.BufferGeometry();
+        aGeo.setAttribute('position', new THREE.BufferAttribute(aPos, 3));
+        const accents = new THREE.Points(aGeo, new THREE.PointsMaterial({ color: 0xee2f3c, size: 0.07, transparent: true, opacity: 0.9, depthWrite: false }));
+        scene.add(accents);
+
+        /* ---------- Interactions ---------- */
+        const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+        window.addEventListener('pointermove', (e) => {
+          mouse.tx = (e.clientX / window.innerWidth) * 2 - 1;
+          mouse.ty = (e.clientY / window.innerHeight) * 2 - 1;
+        }, { passive: true });
+
+        // Petit « saut » quand on clique sur le logo
+        let spin = 0;
+        container.addEventListener('click', () => { spin += Math.PI * 2; });
+
+        function resize() {
+          const w = container.clientWidth;
+          const h = container.clientHeight;
+          renderer.setSize(w, h, false);
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // Pause du rendu quand l'introduction n'est plus visible
+        let visible = true;
+        new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(container);
+
+        /* ---------- Boucle ---------- */
+        const clock = new THREE.Clock();
+        let spinDone = 0;
+        let intro = 0;
+
+        function frame() {
+          requestAnimationFrame(frame);
+          if (!visible) return;
+
+          const t = clock.getElapsedTime();
+          const scrollP = Math.min(window.scrollY / window.innerHeight, 1.2);
+
+          intro += (1 - intro) * 0.04;
+          mouse.x += (mouse.tx - mouse.x) * 0.06;
+          mouse.y += (mouse.ty - mouse.y) * 0.06;
+          spinDone += (spin - spinDone) * 0.06;
+
+          const float = reduceMotion ? 0 : Math.sin(t * 1.1) * 0.12;
+          logo.position.y = float - scrollP * 1.6;
+          logo.rotation.y = -0.42 + mouse.x * 0.55 + (reduceMotion ? 0 : Math.sin(t * 0.5) * 0.12) + scrollP * 1.4 + spinDone;
+          logo.rotation.x = 0.12 + mouse.y * 0.35 + scrollP * 0.4;
+          const base = (isSmall ? 0.95 : 1.02) * (0.6 + 0.4 * intro);
+          logo.scale.setScalar(base * (1 - scrollP * 0.25));
+
+          bar.position.z = P(0, 0, zFront + 0.22).z + (reduceMotion ? 0 : Math.sin(t * 2) * 0.05);
+
+          if (!reduceMotion) {
+            particles.rotation.y = t * 0.03 + mouse.x * 0.15;
+            particles.rotation.x = mouse.y * 0.08;
+            accents.rotation.y = -t * 0.05;
+          }
+
+          renderer.render(scene, camera);
+        }
+        frame();
+
+        container.classList.add('is-3d');
+      const fallback = container.querySelector('.hero-fallback');
+      if (fallback) fallback.remove();
+      }
+    </script>
 
     <!-- Vercel Web Analytics (actif uniquement une fois déployé sur Vercel) -->
     <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>

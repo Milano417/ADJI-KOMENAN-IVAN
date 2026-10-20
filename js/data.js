@@ -484,7 +484,7 @@ const PROJECTS_DATA = [
     year: "2025",
     role: "Concepteur Logiciel & D\xE9veloppeur",
     summary: "Solution num\xE9rique pour la gestion des r\xE9parations automobiles, du suivi des v\xE9hicules clients, de la facturation des pi\xE8ces et du planning d'atelier.",
-    image: "assets/images/project_caispro_showcase_1791034003320.jpg",
+    image: "",
     technologies: ["PHP", "MySQL", "JavaScript", "CSS3", "Mod\xE9lisation des Processus"],
     featured: false,
     caseStudy: {
@@ -519,7 +519,7 @@ const PROJECTS_DATA = [
     year: "2024",
     role: "D\xE9veloppeur Web & Cr\xE9ateur de Contenu",
     summary: "Projet num\xE9rique valorisant les opportunit\xE9s technologiques en Afrique, les outils num\xE9riques et les solutions web adapt\xE9es aux r\xE9alit\xE9s du continent.",
-    image: "assets/images/project_milaweb_showcase_1791033976721.jpg",
+    image: "",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Strat\xE9gie de Contenu"],
     featured: false,
     caseStudy: {
@@ -554,7 +554,7 @@ const PROJECTS_DATA = [
     year: "2025",
     role: "Direction Visuelle & D\xE9veloppement Web",
     summary: "Conception de marque et plateforme e-commerce ax\xE9e sur l'exclusivit\xE9, l'\xE9pure visuelle et une exp\xE9rience d'achat minimaliste et m\xE9morable.",
-    image: "assets/images/project_milyshop_showcase_1791034068242.jpg",
+    image: "",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Design Graphique", "Exp\xE9rience Utilisateur"],
     featured: false,
     caseStudy: {
@@ -680,58 +680,5 @@ const EDUCATION_DATA = [
       "1\xE8re ann\xE9e (2023\u20132024) : Fondamentaux de l'algorithmique, programmation proc\xE9durale, mod\xE9lisation relationnelle (Merise / SQL), architecture mat\xE9rielle et r\xE9seaux.",
       "2\xE8me ann\xE9e (2024\u20132025) : D\xE9veloppement d'applications orient\xE9es objet, programmation web (PHP, JavaScript), bases de donn\xE9es relationnelles avanc\xE9es et r\xE9alisation de projet de fin de cycle."
     ]
-  }
-];
-
-/* ---- tour ---- */
-const TOUR_STEPS = [
-  {
-    step: 1,
-    targetId: "hero",
-    title: "Bienvenue dans mon univers digital",
-    description: "Voici qui je suis et ce que je fais. Je transforme des id\xE9es en exp\xE9riences num\xE9riques modernes, utiles et performantes.",
-    badge: "01 / 07 \xB7 Identit\xE9"
-  },
-  {
-    step: 2,
-    targetId: "about",
-    title: "Derri\xE8re MILANO",
-    description: "D\xE9couvrez mon parcours, ma philosophie de travail et ma passion pour la r\xE9solution de probl\xE8mes par le code et le design.",
-    badge: "02 / 07 \xB7 Storytelling"
-  },
-  {
-    step: 3,
-    targetId: "skills",
-    title: "Comp\xE9tences & Technologies",
-    description: "Voici les technologies et domaines dans lesquels je travaille au quotidien : Frontend, Backend, Mobile, UI/UX et outils modernes.",
-    badge: "03 / 07 \xB7 Expertise"
-  },
-  {
-    step: 4,
-    targetId: "services",
-    title: "Services & Solutions Propos\xE9es",
-    description: "D\xE9couvrez les solutions concr\xE8tes que je peux apporter \xE0 votre entreprise ou organisation, de la maquette jusqu'au produit d\xE9ploy\xE9.",
-    badge: "04 / 07 \xB7 Solutions"
-  },
-  {
-    step: 5,
-    targetId: "projects",
-    title: "Projets & \xC9tudes de Cas",
-    description: "Explorez mes r\xE9alisations concr\xE8tes : chaque projet illustre un probl\xE8me pr\xE9cis, une m\xE9thode d'analyse et une solution technique.",
-    badge: "05 / 07 \xB7 R\xE9alisations"
-  },
-  {
-    step: 6,
-    targetId: "experience",
-    title: "Exp\xE9riences & Formation",
-    description: "Consultez mon parcours professionnel en entreprise (imprimerie, conseil en syst\xE8me d'information) et mon dipl\xF4me BTS IDA.",
-    badge: "06 / 07 \xB7 Parcours"
-  },
-  {
-    step: 7,
-    targetId: "contact",
-    title: "Parlons de votre projet",
-    description: "Vous avez une id\xE9e, un besoin de digitalisation ou une opportunit\xE9 de collaboration ? \xC9changeons directement.",
-    badge: "07 / 07 \xB7 Contact"
   }
 ];
